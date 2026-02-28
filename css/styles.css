@@ -1,0 +1,242 @@
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-hover: #f4f4f5;
+  --text: #18181b;
+  --text-muted: #52525b;
+  --accent: #059669;
+  --accent-hover: #047857;
+  --border: #e4e4e7;
+  --border-muted: #f4f4f5;
+  --code-bg: #f4f4f5;
+  --tag-bg: rgba(5, 150, 105, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.dark {
+  --bg: #0f0f0f;
+  --surface: #171717;
+  --surface-hover: #262626;
+  --text: #fafafa;
+  --text-muted: #a1a1aa;
+  --accent: #34d399;
+  --accent-hover: #6ee7b7;
+  --border: #27272a;
+  --border-muted: #1f1f1f;
+  --code-bg: #262626;
+  --tag-bg: rgba(52, 211, 153, 0.12);
+  --nav-bg: rgba(23, 23, 23, 0.9);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.bg-code {
+  background-color: var(--code-bg);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.border-default {
+  border-color: var(--border);
+}
+
+.border-muted {
+  border-color: var(--border-muted);
+}
+
+.tag {
+  background: var(--tag-bg);
+  color: var(--accent);
+}
+
+.nav-bar {
+  background: var(--nav-bg);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+input, textarea {
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.2);
+}
+
+.dark input:focus,
+.dark textarea:focus {
+  box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.2);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-hover);
+  color: #0f0f0f;
+}
+
+.card-hover:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.08);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 4px 12px rgba(52, 211, 153, 0.12);
+}
+
+.link-accent {
+  color: var(--accent);
+}
+
+.link-accent:hover {
+  color: var(--accent-hover);
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.theme-toggle {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--text-muted);
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+}
+
+.nav-link-active {
+  color: var(--accent);
+}
+
+.nav-link-active:hover {
+  color: var(--accent-hover);
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  background: var(--tag-bg);
+  color: var(--accent);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.skill-chip:hover {
+  border-color: var(--accent);
+  background: var(--tag-bg);
+}
+
+.store-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-store {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.store-btn:hover {
+  border-color: var(--accent);
+  background: var(--tag-bg);
+}
+
+.tech-term {
+  font-weight: 700;
+  color: var(--accent);
+}

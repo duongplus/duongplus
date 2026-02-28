@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function(){var t=localStorage.getItem('portfolio-theme');if(!t)t=typeof matchMedia!='undefined'&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.classList.toggle('dark',t==='dark');document.documentElement.setAttribute('data-theme',t);})();
+  </script>
+  <title>Duong Dang | Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-body antialiased min-h-screen flex flex-col">
+  <nav class="fixed top-4 left-4 right-4 z-50 max-w-4xl mx-auto flex items-center justify-between py-3 px-4 rounded-xl nav-bar border border-default backdrop-blur-sm">
+    <a href="index.html" class="font-heading font-semibold text-lg">Duong Dang</a>
+    <div class="flex items-center gap-2 md:gap-4">
+      <a href="index.html" class="nav-link nav-link-active" aria-label="Thông tin">
+        <svg class="w-5 h-5 md:hidden shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        <span class="hidden md:inline link-accent font-medium" data-i18n="nav_info">Thông tin</span>
+      </a>
+      <a href="products.html" class="nav-link" aria-label="Sản phẩm">
+        <svg class="w-5 h-5 md:hidden shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+        <span class="hidden md:inline text-muted hover:text-[var(--text)] transition-colors" data-i18n="nav_products">Sản phẩm</span>
+      </a>
+      <a href="contact.html" class="nav-link" aria-label="Liên hệ">
+        <svg class="w-5 h-5 md:hidden shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <span class="hidden md:inline text-muted hover:text-[var(--text)] transition-colors" data-i18n="nav_contact">Liên hệ</span>
+      </a>
+      <span class="w-px h-4 bg-[var(--border)] hidden md:block" aria-hidden="true"></span>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg data-theme-icon="sun" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        <svg data-theme-icon="moon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+      </button>
+      <div class="flex gap-1">
+        <button type="button" data-lang-btn="vi" class="nav-lang px-2 py-1 rounded text-sm font-medium md:px-2 md:py-1" aria-label="Tiếng Việt">VI</button>
+        <button type="button" data-lang-btn="en" class="nav-lang px-2 py-1 rounded text-sm text-muted hover:text-[var(--text)] transition-colors md:px-2 md:py-1" aria-label="English">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-1 pt-28 pb-16 px-4 max-w-4xl mx-auto w-full">
+    <section class="mb-16">
+      <h1 class="font-heading font-bold text-3xl md:text-4xl mb-1">Duong Dang</h1>
+      <p class="font-mono text-sm text-muted mb-1" data-i18n="role">Software Developer</p>
+      <p class="text-muted text-sm mb-6" data-i18n="location">Ho Chi Minh</p>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="section-label mb-4" data-i18n="skills_title">Kỹ năng</h2>
+      <div class="rounded-xl border border-default bg-surface p-5 md:p-6">
+        <div class="space-y-5">
+          <div>
+            <p class="font-mono text-xs text-muted mb-2.5" data-i18n="skills_mobile">Mobile</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-chip">Flutter</span>
+              <span class="skill-chip">Riverpod</span>
+              <span class="skill-chip">BloC</span>
+              <span class="skill-chip">Provider</span>
+              <span class="skill-chip">Hive</span>
+              <span class="skill-chip">Material 3</span>
+              <span class="skill-chip">Firebase</span>
+              <span class="skill-chip">In-app Purchase</span>
+              <span class="skill-chip">Deeplink</span>
+              <span class="skill-chip">Keychain</span>
+              <span class="skill-chip">Caching</span>
+            </div>
+          </div>
+          <div>
+            <p class="font-mono text-xs text-muted mb-2.5" data-i18n="skills_backend">Backend & Infra</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-chip">NestJS</span>
+              <span class="skill-chip">Go</span>
+              <span class="skill-chip">ORM</span>
+              <span class="skill-chip">knex</span>
+              <span class="skill-chip">Redis</span>
+              <span class="skill-chip">Pub/Sub</span>
+              <span class="skill-chip">RabbitMQ</span>
+              <span class="skill-chip">NATS</span>
+            </div>
+          </div>
+          <div>
+            <p class="font-mono text-xs text-muted mb-2.5" data-i18n="skills_tools">Tools</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-chip">Jira</span>
+              <span class="skill-chip">Git</span>
+              <span class="skill-chip">Figma</span>
+            </div>
+          </div>
+          <div>
+            <p class="font-mono text-xs text-muted mb-2.5" data-i18n="skills_other">Other</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-chip">agent skill</span>
+              <span class="skill-chip">agent rule</span>
+              <span class="skill-chip">bank memory</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="section-label mb-6" data-i18n="experience_title">Kinh nghiệm</h2>
+      <div class="space-y-8">
+        <article class="rounded-xl border border-default bg-surface p-5 md:p-6 card-hover transition-all duration-200">
+          <div class="flex flex-wrap items-baseline gap-2 mb-2">
+            <span class="font-heading font-semibold" data-i18n="job1_title">Fullstack Developer</span>
+            <span class="text-muted">·</span>
+            <span class="text-muted text-sm" data-i18n="job1_company">questsme Edutainment</span>
+          </div>
+          <p class="font-mono text-xs text-muted mb-4" data-i18n="job1_date">01/2025 - hiện tại · remote</p>
+          <ul class="text-sm text-muted space-y-2 list-disc list-inside pl-1">
+            <li data-i18n-html="job1_1"></li>
+            <li data-i18n-html="job1_2"></li>
+            <li data-i18n-html="job1_3"></li>
+            <li data-i18n-html="job1_4"></li>
+            <li data-i18n-html="job1_5"></li>
+          </ul>
+        </article>
+
+        <article class="rounded-xl border border-default bg-surface p-5 md:p-6 card-hover transition-all duration-200">
+          <div class="flex flex-wrap items-baseline gap-2 mb-2">
+            <span class="font-heading font-semibold" data-i18n="job2_title">Mobile Team Lead</span>
+            <span class="text-muted">·</span>
+            <span class="text-muted text-sm" data-i18n="job2_company">Cho Nhanh E-commerce company limited</span>
+          </div>
+          <p class="font-mono text-xs text-muted mb-4" data-i18n="job2_date">07/2023 - 04/2025 · On-site</p>
+          <ul class="text-sm text-muted space-y-2 list-disc list-inside pl-1">
+            <li data-i18n-html="job2_1"></li>
+            <li data-i18n-html="job2_2"></li>
+            <li data-i18n-html="job2_3"></li>
+          </ul>
+        </article>
+
+        <article class="rounded-xl border border-default bg-surface p-5 md:p-6 card-hover transition-all duration-200">
+          <div class="flex flex-wrap items-baseline gap-2 mb-2">
+            <span class="font-heading font-semibold" data-i18n="job3_title">Mobile Team Member</span>
+            <span class="text-muted">·</span>
+            <span class="text-muted text-sm" data-i18n="job3_company">Hahalolo Travel Socical Network</span>
+          </div>
+          <p class="font-mono text-xs text-muted mb-4" data-i18n="job3_date">03/2022 - 06/2023 · On-site</p>
+          <ul class="text-sm text-muted space-y-2 list-disc list-inside pl-1">
+            <li data-i18n-html="job3_1"></li>
+            <li data-i18n-html="job3_2"></li>
+            <li data-i18n-html="job3_3"></li>
+            <li data-i18n-html="job3_4"></li>
+          </ul>
+        </article>
+
+        <article class="rounded-xl border border-default bg-surface p-5 md:p-6 card-hover transition-all duration-200">
+          <div class="flex flex-wrap items-baseline gap-2 mb-2">
+            <span class="font-heading font-semibold" data-i18n="job4_title">Android Team Member</span>
+            <span class="text-muted">·</span>
+            <span class="text-muted text-sm" data-i18n="job4_company">Ciktek Technology Joint Stock Company</span>
+          </div>
+          <p class="font-mono text-xs text-muted mb-4" data-i18n="job4_date">03/2022 - 06/2023 · On-site</p>
+          <ul class="text-sm text-muted space-y-2 list-disc list-inside pl-1">
+            <li data-i18n-html="job4_1"></li>
+            <li data-i18n-html="job4_2"></li>
+            <li data-i18n-html="job4_3"></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-label mb-4" data-i18n="edu_title">Học vấn</h2>
+      <div class="rounded-xl border border-default bg-surface p-5">
+        <p class="font-heading font-semibold" data-i18n="edu_school">Nguyen Tat Thanh University</p>
+        <p class="font-mono text-sm text-muted mt-1" data-i18n="edu_year">2016 - 2020</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-default py-5 px-4">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-between items-center gap-4">
+      <span class="text-muted text-sm">© Duong Dang</span>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-muted text-sm hover:text-[var(--text)] transition-colors" data-i18n="nav_info">Thông tin</a>
+        <a href="products.html" class="text-muted text-sm hover:text-[var(--text)] transition-colors" data-i18n="nav_products">Sản phẩm</a>
+        <a href="contact.html" class="text-muted text-sm hover:text-[var(--text)] transition-colors" data-i18n="nav_contact">Liên hệ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/i18n.js"></script>
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    document.querySelectorAll('[data-lang-btn]').forEach(btn => {
+      btn.addEventListener('click', () => setLang(btn.getAttribute('data-lang-btn')));
+    });
+  </script>
+</body>
+</html>
